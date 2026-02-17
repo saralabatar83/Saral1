@@ -1,0 +1,211 @@
+/* =========================================
+   1. VARIABLES & GLOBAL SETTINGS
+   ========================================= */
+:root {
+    /* Colors */
+    --footer-bg: #1e1e1e;          /* Dark background */
+    --footer-text: #ffffff;        /* Main white text */
+    --text-muted: #aaaaaa;         /* Greyish links */
+    --accent-blue: #007bff;        /* Blue underline/accents */
+    
+    /* Social Bar Sizes */
+    --social-size: 35px;           
+    --social-icon-size: 20px;      
+    
+    /* Footer Image Sizes */
+    --office-img-size: 150px;   
+    --office-img-radius: 12px;
+}
+
+/* =========================================
+   2. STICKY SOCIAL BAR
+   ========================================= */
+.sticky-social-bar {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+}
+
+.sticky-social-bar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--social-size);
+    height: var(--social-size);
+    color: white;
+    text-decoration: none;
+    font-size: var(--social-icon-size);
+    transition: all 0.3s ease;
+    margin-bottom: 2px;
+}
+
+.sticky-social-bar a:hover {
+    width: calc(var(--social-size) + 15px);
+    padding-right: 5px;
+}
+
+/* Social Platform Background Colors */
+.s-facebook  { background-color: #1877F2; }
+.s-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.s-tiktok    { background-color: #000000; }
+.s-whatsapp  { background-color: #25D366; }
+.s-youtube   { background-color: #FF0000; }
+.s-linkedin  { background-color: #0077B5; }
+.s-default   { background-color: #444; }
+
+/* =========================================
+   3. SITE FOOTER
+   ========================================= */
+.site-footer {
+    background-color: var(--footer-bg);
+    padding: 20px 0; /* Adjusted padding */
+    color: var(--footer-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+}
+
+.footer-col.office-col {
+    flex: 0 0 auto;
+    width: 250px;
+}
+
+.footer-col h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--footer-text);
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-blue);
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--footer-text);
+}
+
+.office-logo {
+    width: var(--office-img-size);
+    height: auto;
+    border-radius: var(--office-img-radius);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: block;
+    transition: transform 0.2s;
+}
+
+.office-logo:hover {
+    transform: scale(1.02);
+}
+
+/* =========================================
+   4. ADMIN / BACK TO TOP BUTTON
+   ========================================= */
+.admin-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #222;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,.3);
+    transition: .3s;
+    z-index: 100;
+}
+
+.admin-btn:hover {
+    background: var(--accent-blue);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   5. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .sticky-social-bar {
+        top: auto;
+        bottom: 80px; /* Moved up to avoid overlap with admin btn */
+        flex-direction: row;
+        right: 20px;
+    }
+    
+    .sticky-social-bar a {
+        margin-right: 2px;
+        border-radius: 5px;
+    }
+
+    .footer-col.office-col {
+        width: 100%;
+    }
+}
+.creator {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding:10px;
+    height: 20px;
+}
+
+.credit {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.credit:hover {
+    color: #ff4d6d;
+}
+
+.heart {
+    color: red;
+}
